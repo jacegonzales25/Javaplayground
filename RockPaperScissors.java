@@ -15,14 +15,14 @@ public class RockPaperScissors{
         
         System.out.println("Welcome to Rock, Paper, Scissors!");
         // Game going once
-        getPlayer1move();
-        getPlayer2move();
-        boolean isequal = isequalmove(getPlayer1move(), getPlayer2move());
+        String player1Move = getPlayer1move();
+        String player2Move = getPlayer2move();
+        boolean isequal = isequalmove(player1Move, player2Move);
         if(isequal){
             System.out.println("It's a tie!");
             game();
         }
-        String playerWinner = winner(getPlayer1move(), getPlayer2move());
+        String playerWinner = winner(player1Move, player2Move);
         System.out.println(playerWinner + " wins!");
         boolean playAgain = playAgain();
         if (playAgain){
@@ -59,7 +59,7 @@ public class RockPaperScissors{
     }
 
     public String winner(String player1move, String player2move){
-        String player1 = "player1", player2 = "player2";
+        String player1 = "Player1", player2 = "Player2";
 
         if (player1move.equals("R") && player2move.equals("P")) {
             System.out.println("Player 1 chooses Rock");
