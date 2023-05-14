@@ -6,16 +6,33 @@ public class RockPaperScissors{
 
     public static void main(String[] args){
 
-
-
-
+        RockPaperScissors RPSgame = new RockPaperScissors();
+        RPSgame.game();
 
     }
 
     public void game(){
         
         System.out.println("Welcome to Rock, Paper, Scissors!");
+        // Game going once
+        getPlayer1move();
+        getPlayer2move();
+        boolean isequal = isequalmove(getPlayer1move(), getPlayer2move());
+        if(isequal){
+            System.out.println("It's a tie!");
+            game();
+        }
+        String playerWinner = winner(getPlayer1move(), getPlayer2move());
+        System.out.println(playerWinner + " wins!");
+        boolean playAgain = playAgain();
+        if (playAgain){
+            game();
+        }
+        System.exit(0);
 
+
+        // Best of three
+        // Best of five
 
     }
 
@@ -95,6 +112,15 @@ public class RockPaperScissors{
             return true;
         }
 
+        return false;
+    }
+
+    public boolean playAgain(){
+        System.out.println("Would you like to play again? Y/N: ");
+        String answer = scan.nextLine();
+        if (answer.toUpperCase().equals("Y")){
+            return true;
+        }
         return false;
     }
 
