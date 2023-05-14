@@ -41,6 +41,55 @@ public class RockPaperScissors{
         return player2move.toUpperCase();
     }
 
+    public String winner(String player1move, String player2move){
+        String player1 = "player1", player2 = "player2";
+
+        if (player1move.equals("R") && player2move.equals("P")) {
+            System.out.println("Player 1 chooses Rock");
+            System.out.println("Player 2 chooses Paper");
+            System.out.println("Paper wraps Rock into submission!");
+            System.out.println("Player 2 wins this round");
+            return player2;
+        }
+        else if (player1move.equals("P") && player2move.equals("R")) {
+            System.out.println("Player 1 chooses Paper");
+            System.out.println("Player 2 chooses Rock");
+            System.out.println("Paper wraps Rock into submission!");
+            System.out.println("Player 1 wins this round");
+            return player1;
+        }
+        else if (player1move.equals("R") && player2move.equals("S")) {
+            System.out.println("Player 1 chooses Rock");
+            System.out.println("Player 2 chooses Scissors");
+            System.out.println("Rock bends Scissors!");
+            System.out.println("Player 1 wins this round");
+            return player1;
+        }
+        else if (player1move.equals("P") && player2move.equals("S")) {
+            System.out.println("Player 1 chooses Paper");
+            System.out.println("Player 2 chooses Scissors");
+            System.out.println("Scissors slashes Paper!");
+            System.out.println("Player 2 wins this round");
+            return player2;
+        }
+        else if (player1move.equals("S") && player2move.equals("R")) {
+            System.out.println("Player 1 chooses Scissors");
+            System.out.println("Player 2 chooses Rock");
+            System.out.println("Rock bends Scissors!");
+            System.out.println("Player 2 wins this round");
+            return player2;
+        }
+        else if (player1move.equals("S") && player2move.equals("P")) {
+            System.out.println("Player 1 chooses Scissors");
+            System.out.println("Player 2 chooses Paper");
+            System.out.println("Scissors slashes Paper!");
+            System.out.println("Player 1 wins this round");
+            return player1;
+        }
+
+        return "Edge case";
+    }
+
     public boolean isequalmove(String player1move, String player2move) {
         if (player1move.equals(player2move)){
             return true;
