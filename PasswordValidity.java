@@ -1,12 +1,22 @@
 import java.util.Scanner;
 public class PasswordValidity{
 
-
-
-
-
-
     private static boolean isValid(String password){
+        char firstCharacter = password.charAt(0);
+
+        if (!((password.length() >= 8) && (password.length() <= 16))){
+            System.out.println("Invalid! Requires a minimum of 8 and "
+                    + "maximum of 16 characters!");
+            return false;
+        }
+
+        if (firstCharacter == '0' || firstCharacter == '1' || firstCharacter == '2'
+        || firstCharacter == '3' || firstCharacter == '4' || firstCharacter == '5'
+        || firstCharacter == '6' || firstCharacter == '7' || firstCharacter == '8'
+        || firstCharacter == '9') {
+        System.out.println("Invalid! First character should be a letter");
+            return false;
+        }
 
         return true;
 
