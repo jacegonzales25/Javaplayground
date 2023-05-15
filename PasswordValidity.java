@@ -18,6 +18,27 @@ public class PasswordValidity{
             return false;
         }
 
+        if (password.contains("@") || password.contains("#")
+		    || password.contains("!") || password.contains("~")
+		    || password.contains("$") || password.contains("%")
+		    || password.contains("^") || password.contains("&")
+		    || password.contains("*") || password.contains("(")
+		    || password.contains(")") || password.contains("-")
+		    || password.contains("+") || password.contains("/")
+		    || password.contains(":") || password.contains(".")
+		    || password.contains(", ") || password.contains("<")
+		    || password.contains(">") || password.contains("?")
+		    || password.contains("|")) {
+		    
+                System.out.println("Invalid! Password must not contain special characters");
+                return false;
+		}
+
+        if (password.contains(" ")) {
+            System.out.println("Invalid! Must not include ' '");
+            return false;
+        }
+        
         return true;
 
     }
