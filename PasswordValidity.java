@@ -38,7 +38,7 @@ public class PasswordValidity{
             System.out.println("Invalid! Must not include ' '");
             return false;
         }
-        
+
         return true;
 
     }
@@ -62,10 +62,14 @@ public class PasswordValidity{
 
         PasswordValidity pv = new PasswordValidity();
         String password = pv.getPassword();
-        isValid(password);
+        boolean valid = isValid(password);
+        if (valid){
+            System.out.println("Successfully configured password");
+        }else{
+            System.out.println("Unsuccessfully configured password");
+        }
 
-
+        System.exit(0);
     }
-
 
 }
