@@ -48,6 +48,14 @@ public class diskManagementFCFS{
 
     }
 
+    static int getTotalMoment(int[] request_array ){
+        int summation = 0;
+        for(int i = 1; i < request_array.length; i++){
+            summation += Math.abs(request_array[i-1] - request_array[i]);
+        }
+        return summation;
+    }
+
 
 
 }
