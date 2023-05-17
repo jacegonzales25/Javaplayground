@@ -7,7 +7,8 @@ public class diskManagementFCFS{
 
     public static void main(String[] args){
 
-
+        int[] requests_array = getUserInput();
+        System.out.println(getTotalMoment(requests_array));
 
     }
 
@@ -55,7 +56,5 @@ public class diskManagementFCFS{
         }
         return summation;
     }
-
-
 
 }
