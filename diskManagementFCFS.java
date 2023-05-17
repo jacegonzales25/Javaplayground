@@ -27,6 +27,23 @@ public class diskManagementFCFS{
         System.out.println("Enter starting point: ");
         int starting_num = userInput.nextInt();  
 
+        if (starting_num < 0 || starting_num > 199){
+            System.out.println("Error! Starting point must be between 0 - 199");
+            getUserInput();
+        }else{
+            requests_array[0] = starting_num;
+        }
+
+        // i = 1 since i = 0 has starting_num
+        for (int i = 1; i < requests_num + 1; i++){
+            System.out.println("Enter request: " + i);
+            requests_array[i] = userInput.nextInt();
+        }
+
+        System.out.println(Arrays.toString(requests_array));
+
+        userInput.close();
+
         return requests_array;
 
     }
