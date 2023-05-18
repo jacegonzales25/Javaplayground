@@ -24,7 +24,17 @@ public class BasketballGame{
     }
 
 
-    private int teamScores(){
+    private int teamScores(String team1, team2){
+        System.out.println(team1 + " and " team2);
+        System.out.println("Respective scores");
+        for (int i = 0; i < 2; i++){
+            int Tsum = 0;
+
+            for (int j = 0; j < 12; j++){
+                Tsum += playerscore[i][j];
+            }
+            return System.out.println(Tsum);
+        }
 
     }
 
